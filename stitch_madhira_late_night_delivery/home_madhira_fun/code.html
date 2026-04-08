@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Madhira - The Modern Mela Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;0,900;1,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#7b5400",
+                        "on-surface": "#412923",
+                        "primary-container": "#ff766d",
+                        "surface-container-high": "#ffdad2",
+                        "on-primary-fixed-variant": "#600007",
+                        "surface-container": "#ffe2db",
+                        "on-primary-fixed": "#000000",
+                        "on-secondary": "#fff1df",
+                        "surface-container-highest": "#ffd3c9",
+                        "primary-dim": "#a40113",
+                        "primary-fixed-dim": "#ff5a53",
+                        "error-container": "#fb5151",
+                        "inverse-primary": "#ff544e",
+                        "on-secondary-fixed-variant": "#6c4a00",
+                        "primary-fixed": "#ff766d",
+                        "surface-variant": "#ffd3c9",
+                        "tertiary": "#00675c",
+                        "tertiary-fixed": "#8df5e4",
+                        "outline": "#906f68",
+                        "on-tertiary-container": "#005c53",
+                        "outline-variant": "#caa59c",
+                        "on-secondary-container": "#614100",
+                        "tertiary-dim": "#005a50",
+                        "on-error-container": "#570008",
+                        "on-tertiary-fixed-variant": "#00675c",
+                        "on-primary-container": "#4f0004",
+                        "on-tertiary": "#c0fff3",
+                        "error-dim": "#9f0519",
+                        "tertiary-container": "#8df5e4",
+                        "secondary-fixed": "#ffc96f",
+                        "on-surface-variant": "#72544e",
+                        "surface": "#fff4f2",
+                        "on-error": "#ffefee",
+                        "surface-tint": "#b5161e",
+                        "inverse-surface": "#1c0905",
+                        "surface-dim": "#fec8bc",
+                        "surface-container-low": "#ffede9",
+                        "inverse-on-surface": "#b9958d",
+                        "error": "#b31b25",
+                        "secondary-dim": "#6b4900",
+                        "on-tertiary-fixed": "#004840",
+                        "on-background": "#412923",
+                        "on-primary": "#ffefed",
+                        "secondary-container": "#ffc96f",
+                        "primary": "#b5161e",
+                        "tertiary-fixed-dim": "#7fe6d5",
+                        "secondary-fixed-dim": "#ffb623",
+                        "background": "#fff4f2",
+                        "on-secondary-fixed": "#483000",
+                        "surface-bright": "#fff4f2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .dhaka-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23caa59c' fill-opacity='0.08'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 w-full bg-[#fff4f2] dark:bg-stone-950 shadow-[0_12px_32px_rgba(65,41,35,0.08)]">
+<div class="flex items-center gap-4">
+<span class="text-3xl font-black text-[#b5161e] dark:text-[#ff766d] italic font-headline tracking-tight">Madhira</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#b5161e] font-bold font-headline transition-opacity hover:opacity-80" href="#">Home</a>
+<a class="text-[#412923] dark:text-stone-400 font-headline transition-opacity hover:opacity-80" href="#">Liquor</a>
+<a class="text-[#412923] dark:text-stone-400 font-headline transition-opacity hover:opacity-80" href="#">Kitchen</a>
+<a class="text-[#412923] dark:text-stone-400 font-headline transition-opacity hover:opacity-80" href="#">Snacks</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#b5161e] dark:text-[#ff766d] transition-transform active:scale-95 duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 text-[#b5161e] dark:text-[#ff766d] transition-transform active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="md:hidden p-2 text-[#b5161e]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="px-6 mb-12">
+<div class="relative overflow-hidden rounded-xl bg-primary min-h-[480px] flex flex-col justify-end p-8 md:p-16 dhaka-pattern">
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="Vibrant night market scene with colorful hanging lanterns, glowing food stalls, and a warm festive atmosphere in Kathmandu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2gnyGmt4MlMij_Yt0OJCybk968sL5GwKPsADribqkrpATvqaTegXMye_wfFtJD017DW_u0AZ940J3hDEagPYmQl3ce7vD8jptKxxwM5i3WZ4Ih0FDdDBQyLVyhRhp62idIdNnLRl4p1v7LXn9vlZBnMmiYWzZAFg5WIbnGeEYe46l98dlAqZPey5syVnIIkrOQVJ2nqJB_QL-YG6BH_HrMAYrDzzmlKw9pmtp_4J2Mxg0jnr_YzjWA59vBy-N0C5xv-SFZyFy_Rkl"/>
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase mb-4">Late Night Mela</span>
+<h1 class="text-5xl md:text-7xl font-black text-on-primary font-headline leading-[0.9] tracking-tighter mb-6">
+                        Fuel Your <br/><span class="text-secondary-fixed">Late Night</span> Revelry
+                    </h1>
+<p class="text-lg md:text-xl text-on-primary/90 max-w-lg mb-8 leading-relaxed">
+                        From the finest spirits to sizzling street flavors, the Mela comes to your doorstep. Every order is a celebration.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition-transform">
+                            Start the Party
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Bento Grid -->
+<section class="px-6 mb-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Liquor Category -->
+<div class="md:col-span-7 relative group overflow-hidden rounded-xl bg-surface-container-high transition-all">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Elegant bar counter with backlighted amber glass bottles, crystal glasses, and a moody sophisticated cocktail lounge vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjd0zwLmkmtOfgFVAYMxk-WXOCvYIj3MuxBluiARgEe6NA6JLCrMOAH4HNiwsBFvd1xGJHjihyY5LEk5VXZI_h3OkJ3ONMqqjz9C14md0OYfm8LPPz2byJcQG5hPtccl-XLLn8v22X77i9vHXhZhgg1pjlPUMwMoCe9_fLfGhFm6EFFAZ4Ar_tPyyOOE3WpzhHdT4iIiXUNnzBz5xcXbnCsP3uTNwSc1GeMSafGn6EMAdS9W6lo5NDBCRV2A_5U_CLhJBjaMHqhlAE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-4xl font-black text-white font-headline italic mb-2">Liquor</h3>
+<p class="text-white/80 mb-6 font-medium">Curated spirits, craft beers, and fine wines.</p>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                            Explore Collection <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Kitchen Category -->
+<div class="md:col-span-5 relative group overflow-hidden rounded-xl bg-tertiary-container transition-all">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Steaming hot traditional Nepali momos in a bamboo steamer with vibrant spicy tomato chutney on the side" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfymxVW8FQQcqHqORGPY39fctEe1AQHwsaKoZqLfQG9eCDYBDmPqWXY1dhl_qjFLMAiiPd9H-r-gaWdUw4PR7d5hk2JcqTI4_HzlpW4A2ffMDszOoPy2KjOBKeFVfrun3psgpjXGF6gYtbGMtv-DB0aihFE-8l7vJ8Q0_52C7ScnZleTXbceJIRWmzWhffDb1jtYWFsl9nmF26lxuljKLoFFmGz9X5vPAKU90BASVej7FO9ZPp9bjd7PzZW8OmVjFwGoBOv1apjzau"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-3xl font-black text-white font-headline italic mb-2">Kitchen</h3>
+<p class="text-white/80 mb-4 font-medium">Authentic flavors from the heart of the mela.</p>
+<button class="bg-tertiary text-on-tertiary px-6 py-2 rounded-full font-bold">Order Now</button>
+</div>
+</div>
+<!-- Snacks Category -->
+<div class="md:col-span-12 relative group overflow-hidden rounded-xl bg-secondary-container h-64 md:h-auto transition-all">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Assorted crunchy bar snacks, spiced nuts, and savory crisps in rustic bowls on a wooden festive table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg55jh98Q3lBkwPOyTLdC4qNycVBtXmbqWmwE-gop3Tb-84I8cGap4lXiS2CsmNqDmwc4DpwEtZHkYAiQToIeH5y2IGASNOvsR1yg1bU4_5uE-BpBjcveNz4A3nJN94T4sQZWqJGXb98WhNYhOL9qMDPDXVhwaY7NN8a_lS5_Pk7HaLEE9aBa630d0i6OJbOAxHuPIBo7bdSIyFyMRU3akQIt1OgkG3UfgVmRgftuKF3oJazreiI3LfVVYfpwqR6fGLAscJLgshr4q"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
+<div class="absolute inset-0 flex flex-col justify-center px-8 md:px-16">
+<h3 class="text-4xl font-black text-white font-headline italic mb-2">Snacks &amp; Chakhna</h3>
+<p class="text-white/80 max-w-sm mb-6">The perfect crunch for every sip and story.</p>
+<div class="flex gap-4">
+<span class="bg-white/20 backdrop-blur-md text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Spicy</span>
+<span class="bg-white/20 backdrop-blur-md text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Savory</span>
+<span class="bg-white/20 backdrop-blur-md text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Crunchy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Section -->
+<section class="px-6 mb-16">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-4xl font-black font-headline text-primary tracking-tight">Mela Favorites</h2>
+<p class="text-on-surface-variant">What everyone is vibing with tonight</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 border-b-2 border-primary-container pb-1">
+                    See All <span class="material-symbols-outlined">trending_flat</span>
+</button>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 snap-x no-scrollbar">
+<!-- Item 1 -->
+<div class="min-w-[280px] snap-start bg-surface-container-low rounded-xl p-4 transition-transform hover:-translate-y-2">
+<div class="relative h-48 rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="Artisan cocktail with fresh mint and lime in a tall glass with crushed ice and a moody dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Fl1EqoJRnq_G7Da_3z2HjwCMAEQqaGyg3ars0ZqdCH8W-i4KxRpEAzYz-T_OQghkua51pSy0DsppEBr-DVi1jKeHT9taPzHCCgSlzot54LfCACsRQgNDGLIfNrxHvBoWY04NKrjHonXVmYlciCg-Li94cOALmRYlEtijVsqhe9AIFALJIly-AopKnhtXT2I5L3xjvZmv3Gsz9h4k81U3UtFex3g_iR2mhX5CWtWS0mlga6Ja64m9ETB5K-TBJIziH0Q86My0YkWr"/>
+<div class="absolute top-2 right-2 bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-black">TOP SELLER</div>
+</div>
+<h4 class="font-headline font-bold text-xl mb-1">Himalayan Mule</h4>
+<p class="text-sm text-on-surface-variant mb-4">Vodka, Ginger Beer, Lime, and a hint of Timur pepper.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-black text-primary">Rs. 850</span>
+<button class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="min-w-[280px] snap-start bg-surface-container-low rounded-xl p-4 transition-transform hover:-translate-y-2">
+<div class="relative h-48 rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="Close up of deep fried spicy pork ribs with green chilies and onions served on a rustic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGZj7mTh48cYBEQsqoNdJwqY2WhOqerDAb9vm_9X29bLamTLby2XgDR2Rl9nGL0bQONaY5THU3SRyZquajWXm4HLmc7FGG5CfPPCDaVlPwEx5956MQYfv2omAFlA4IszikWaHl833Khulw7c2XDEuPW-Hj6BgMVr7k27gkxROQzGcRF3jO1ixrE10FErU4QXM0EmFjubJYmg4KS3_NPPNOAGD6qJ89l62AyUVztnSkWpAAlta47mJ8NAAxArgitx-Q9Pd_x-5WBU4e"/>
+<div class="absolute top-2 right-2 bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-xs font-black">FESTIVE</div>
+</div>
+<h4 class="font-headline font-bold text-xl mb-1">Spicy Pork Choila</h4>
+<p class="text-sm text-on-surface-variant mb-4">Fire-roasted pork with traditional Newari spices.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-black text-primary">Rs. 420</span>
+<button class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="min-w-[280px] snap-start bg-surface-container-low rounded-xl p-4 transition-transform hover:-translate-y-2">
+<div class="relative h-48 rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="Golden fried cashew nuts with salt and red chili powder in a small copper bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANZsmK5ylSzOamDTFjQUvQ9TaCo_sCpboXZ76XpudoQhH8hybXRCKh9PNYwqtnIK9XYggXDfPmf1OIhyvkGKI9VxHqu8jRsqsTqN7Ha_mtDEto3kW1KB0vwEubpxou9lmPDz7EA4HL8DcwuhKX06m-COgkpNQSPzTbCEvTfFZxHD1wsolwDG3Ax36hMOSYk2UhOjgItdN9gcFfs7zjovlZ69IZMN9TdGMxS-5QidG6dbt7jIOgQ0mhnK-VOxUJgLXABc_j99I0gQGQ"/>
+</div>
+<h4 class="font-headline font-bold text-xl mb-1">Masala Cashews</h4>
+<p class="text-sm text-on-surface-variant mb-4">Roasted cashews tossed in a secret spice blend.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-black text-primary">Rs. 350</span>
+<button class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Promotional Banner -->
+<section class="px-6 mb-16">
+<div class="bg-surface-container-highest rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 border-4 border-dashed border-outline-variant/30">
+<div class="text-center md:text-left flex-1">
+<h2 class="text-3xl md:text-4xl font-black font-headline text-on-surface mb-4">The Festive Weekend Offer</h2>
+<p class="text-on-surface-variant text-lg mb-6">Get flat 20% off on all Kitchen orders above Rs. 1500. Use code: <span class="font-bold text-primary">MELA20</span></p>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold text-lg">Claim Offer</button>
+</div>
+<div class="w-48 h-48 flex-shrink-0 bg-primary-container rounded-full flex items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-8xl text-on-primary-container" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-12 pb-32 px-6 bg-[#ffede9] dark:bg-stone-900 no-border">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div>
+<span class="text-2xl font-black font-headline text-[#b5161e] italic block mb-4">Madhira</span>
+<p class="text-[#412923] dark:text-stone-500 font-body mb-6 max-w-xs">Elevating your late-night experiences with the spirit of the Mela.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined text-xl">thumb_up</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h5 class="font-headline font-bold text-primary mb-4">Explore</h5>
+<ul class="space-y-2 text-sm text-[#412923] dark:text-stone-500 font-body">
+<li><a class="hover:text-[#00675c] transition-colors" href="#">Liquor Store</a></li>
+<li><a class="hover:text-[#00675c] transition-colors" href="#">Kitchen Specials</a></li>
+<li><a class="hover:text-[#00675c] transition-colors" href="#">Bulk Orders</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-primary mb-4">Help</h5>
+<ul class="space-y-2 text-sm text-[#412923] dark:text-stone-500 font-body">
+<li><a class="hover:text-[#00675c] transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-[#00675c] transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-[#00675c] transition-colors" href="#">Support</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center text-xs text-[#412923]/60 dark:text-stone-500/60 font-label">
+            © 2024 Madhira. The Modern Mela Experience.
+        </div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#fff4f2]/80 dark:bg-stone-950/80 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-8px_30px_rgba(65,41,35,0.1)] md:hidden">
+<a class="flex flex-col items-center justify-center bg-[#ffe2db] dark:bg-stone-800 text-[#b5161e] dark:text-[#ff766d] rounded-full px-6 py-2 transition-transform hover:scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 transition-transform hover:scale-110" href="#">
+<span class="material-symbols-outlined">wine_bar</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-widest mt-1">Liquor</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 transition-transform hover:scale-110" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-widest mt-1">Kitchen</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 transition-transform hover:scale-110" href="#">
+<span class="material-symbols-outlined">cookie</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-widest mt-1">Snacks</span>
+</a>
+</nav>
+<!-- FAB for quick cart -->
+<button class="fixed bottom-24 right-6 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center z-40 md:bottom-12 animate-pulse-subtle">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+</button>
+</body></html>

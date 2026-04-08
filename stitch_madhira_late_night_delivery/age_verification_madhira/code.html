@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#ffede9",
+                    "surface-variant": "#ffd3c9",
+                    "outline": "#906f68",
+                    "on-primary-container": "#4f0004",
+                    "tertiary-dim": "#005a50",
+                    "inverse-primary": "#ff544e",
+                    "surface-container": "#ffe2db",
+                    "inverse-on-surface": "#b9958d",
+                    "on-secondary-fixed": "#483000",
+                    "on-secondary": "#fff1df",
+                    "surface": "#fff4f2",
+                    "on-tertiary-container": "#005c53",
+                    "on-error-container": "#570008",
+                    "on-background": "#412923",
+                    "on-surface-variant": "#72544e",
+                    "on-error": "#ffefee",
+                    "secondary-container": "#ffc96f",
+                    "secondary-dim": "#6b4900",
+                    "on-primary-fixed-variant": "#600007",
+                    "primary-fixed": "#ff766d",
+                    "error": "#b31b25",
+                    "primary": "#b5161e",
+                    "primary-dim": "#a40113",
+                    "surface-dim": "#fec8bc",
+                    "secondary": "#7b5400",
+                    "on-tertiary-fixed-variant": "#00675c",
+                    "on-surface": "#412923",
+                    "background": "#fff4f2",
+                    "on-primary": "#ffefed",
+                    "on-secondary-fixed-variant": "#6c4a00",
+                    "surface-bright": "#fff4f2",
+                    "tertiary-fixed-dim": "#7fe6d5",
+                    "secondary-fixed-dim": "#ffb623",
+                    "on-tertiary": "#c0fff3",
+                    "secondary-fixed": "#ffc96f",
+                    "surface-tint": "#b5161e",
+                    "tertiary-container": "#8df5e4",
+                    "on-tertiary-fixed": "#004840",
+                    "error-dim": "#9f0519",
+                    "inverse-surface": "#1c0905",
+                    "tertiary-fixed": "#8df5e4",
+                    "error-container": "#fb5151",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#ffd3c9",
+                    "on-secondary-container": "#614100",
+                    "on-primary-fixed": "#000000",
+                    "outline-variant": "#caa59c",
+                    "surface-container-high": "#ffdad2",
+                    "tertiary": "#00675c",
+                    "primary-container": "#ff766d",
+                    "primary-fixed-dim": "#ff5a53"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .festive-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b5161e' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .marigold-glow {
+            box-shadow: 0 0 40px rgba(230, 81, 0, 0.2);
+        }
+        .kinetic-layer {
+            transform: skewY(-2deg);
+        }
+        .kinetic-layer-content {
+            transform: skewY(2deg);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Age Verification Gateway -->
+<main class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-surface-bright p-6">
+<!-- Atmospheric Background Elements -->
+<div class="absolute inset-0 festive-pattern pointer-events-none"></div>
+<!-- Marigold Garland Top Decoration -->
+<div class="absolute top-0 left-0 w-full flex justify-around pointer-events-none opacity-40">
+<div class="w-24 h-48 rounded-full border-4 border-dashed border-secondary-fixed opacity-20 -translate-y-24"></div>
+<div class="w-32 h-64 rounded-full border-4 border-dashed border-secondary-fixed opacity-20 -translate-y-32"></div>
+<div class="w-24 h-48 rounded-full border-4 border-dashed border-secondary-fixed opacity-20 -translate-y-24"></div>
+<div class="w-32 h-64 rounded-full border-4 border-dashed border-secondary-fixed opacity-20 -translate-y-32"></div>
+</div>
+<!-- Asymmetric Background Shapes -->
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-[30rem] h-[30rem] bg-secondary-container/10 rounded-full blur-3xl"></div>
+<!-- Central Verification Card -->
+<div class="relative w-full max-w-xl z-10">
+<!-- Festive Illustration Header -->
+<div class="mb-12 text-center">
+<div class="inline-block relative">
+<div class="absolute inset-0 bg-secondary-container rounded-xl blur-2xl opacity-30"></div>
+<div class="relative bg-surface-container-highest p-8 rounded-xl kinetic-layer shadow-2xl">
+<div class="kinetic-layer-content flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-7xl mb-4" data-icon="festival" style="font-variation-settings: 'FILL' 1;">festival</span>
+<span class="font-headline font-black italic text-4xl text-primary tracking-tighter">Madhira</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Section -->
+<section class="bg-surface-container-lowest rounded-xl p-10 md:p-16 shadow-[0_12px_32px_rgba(65,41,35,0.08)] border-t-8 border-primary relative overflow-hidden">
+<!-- Subtle Watermark -->
+<div class="absolute top-4 right-4 opacity-[0.03] rotate-12 pointer-events-none">
+<span class="material-symbols-outlined text-[10rem]" data-icon="local_bar">local_bar</span>
+</div>
+<div class="relative z-10 text-center">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface mb-6 tracking-tight">
+                        Wait a Moment, <span class="text-primary italic">Friend!</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl leading-relaxed mb-12 max-w-sm mx-auto">
+                        Welcome to the digital mela. You must be <span class="font-bold text-on-surface underline decoration-secondary-container decoration-4">18 or older</span> to enter our collection of spirits and celebrations.
+                    </p>
+<!-- Interactive Buttons -->
+<div class="flex flex-col gap-6 w-full max-w-sm mx-auto">
+<!-- Primary Action -->
+<button class="group relative w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-xl py-6 rounded-full shadow-lg hover:shadow-primary/30 active:scale-95 transition-all duration-300">
+<span class="flex items-center justify-center gap-3">
+                                Yes, I am 18+
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</button>
+<!-- Secondary Action -->
+<button class="w-full bg-surface-container-low text-on-surface-variant font-label font-bold text-sm uppercase tracking-widest py-5 rounded-full hover:bg-surface-container transition-colors active:scale-95">
+                            No, I am under 18
+                        </button>
+</div>
+<!-- Footer Note -->
+<div class="mt-12 pt-8 border-t border-outline-variant/10">
+<div class="flex items-center justify-center gap-2 text-on-surface-variant/60 text-xs font-label font-medium uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+                            Responsible drinking is part of the celebration.
+                        </div>
+</div>
+</div>
+</section>
+<!-- Bottom Illustration -->
+<div class="mt-10 flex justify-center gap-4">
+<div class="h-2 w-2 rounded-full bg-primary/20"></div>
+<div class="h-2 w-12 rounded-full bg-secondary-container"></div>
+<div class="h-2 w-2 rounded-full bg-primary/20"></div>
+</div>
+</div>
+<!-- Corner Accents (Editorial Style) -->
+<div class="fixed top-0 left-0 p-12 hidden lg:block opacity-20">
+<span class="material-symbols-outlined text-8xl text-secondary" data-icon="celebration" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+<div class="fixed bottom-0 right-0 p-12 hidden lg:block opacity-20">
+<span class="material-symbols-outlined text-8xl text-primary" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<!-- Background Image Texture Overlay -->
+<div class="fixed inset-0 pointer-events-none z-0 opacity-[0.04]">
+<img alt="Detailed background texture showing traditional Nepali handmade paper with subtle fibers and warm golden tones" class="w-full h-full object-cover grayscale" data-alt="Detailed background texture showing traditional Nepali handmade paper with subtle fibers and warm golden tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Oz-eJZyh68cRXGJ6W-ji-lAuOSZvL6NBVXLD_cVMLLuApM3MbEXkvQcrsw9Cn8ApDpdpJQP0r0LneZ0eh7C2hXcrrZFIOIvaXMFzsXvaSnYLYFWoM48KM3UU-RfCQGDCsVriBRFnHdo3HYTXJRnHx1GRoE0lMhpwd1_HtYjhgPfYV8QLW9Xdvvp4p2YlW-pqQt05CqRjFh_BsDoJe813-31SGUlqd0zgHkaUjtUQuwYKejUOIEMbi5B_m6KJwut6NbNNPpRQJgke"/>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;0,900;1,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#7b5400",
+                    "on-surface": "#412923",
+                    "primary-container": "#ff766d",
+                    "surface-container-high": "#ffdad2",
+                    "on-primary-fixed-variant": "#600007",
+                    "surface-container": "#ffe2db",
+                    "on-primary-fixed": "#000000",
+                    "on-secondary": "#fff1df",
+                    "surface-container-highest": "#ffd3c9",
+                    "primary-dim": "#a40113",
+                    "primary-fixed-dim": "#ff5a53",
+                    "error-container": "#fb5151",
+                    "inverse-primary": "#ff544e",
+                    "on-secondary-fixed-variant": "#6c4a00",
+                    "primary-fixed": "#ff766d",
+                    "surface-variant": "#ffd3c9",
+                    "tertiary": "#00675c",
+                    "tertiary-fixed": "#8df5e4",
+                    "outline": "#906f68",
+                    "on-tertiary-container": "#005c53",
+                    "outline-variant": "#caa59c",
+                    "on-secondary-container": "#614100",
+                    "tertiary-dim": "#005a50",
+                    "on-error-container": "#570008",
+                    "on-tertiary-fixed-variant": "#00675c",
+                    "on-primary-container": "#4f0004",
+                    "on-tertiary": "#c0fff3",
+                    "error-dim": "#9f0519",
+                    "tertiary-container": "#8df5e4",
+                    "secondary-fixed": "#ffc96f",
+                    "on-surface-variant": "#72544e",
+                    "surface": "#fff4f2",
+                    "on-error": "#ffefee",
+                    "surface-tint": "#b5161e",
+                    "inverse-surface": "#1c0905",
+                    "surface-dim": "#fec8bc",
+                    "surface-container-low": "#ffede9",
+                    "inverse-on-surface": "#b9958d",
+                    "error": "#b31b25",
+                    "secondary-dim": "#6b4900",
+                    "on-tertiary-fixed": "#004840",
+                    "on-background": "#412923",
+                    "on-primary": "#ffefed",
+                    "secondary-container": "#ffc96f",
+                    "primary": "#b5161e",
+                    "tertiary-fixed-dim": "#7fe6d5",
+                    "secondary-fixed-dim": "#ffb623",
+                    "background": "#fff4f2",
+                    "on-secondary-fixed": "#483000",
+                    "surface-bright": "#fff4f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .mela-gradient {
+        background: linear-gradient(135deg, #b5161e 0%, #ff766d 100%);
+      }
+      .dhaka-pattern {
+        background-color: transparent;
+        background-image: radial-gradient(#caa59c 0.5px, transparent 0.5px);
+        background-size: 12px 12px;
+        opacity: 0.15;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 w-full bg-[#fff4f2] dark:bg-stone-950 shadow-[0_12px_32px_rgba(65,41,35,0.08)]">
+<div class="flex items-center gap-4">
+<span class="text-3xl font-black text-[#b5161e] dark:text-[#ff766d] italic font-['Epilogue'] tracking-tight">Madhira</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#412923] dark:text-stone-400 font-bold hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="text-[#b5161e] font-bold hover:opacity-80 transition-opacity" href="#">Liquor</a>
+<a class="text-[#412923] dark:text-stone-400 font-bold hover:opacity-80 transition-opacity" href="#">Kitchen</a>
+<a class="text-[#412923] dark:text-stone-400 font-bold hover:opacity-80 transition-opacity" href="#">Snacks</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#b5161e] dark:text-[#ff766d] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="p-2 text-[#b5161e] dark:text-[#ff766d] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<header class="relative mb-12 overflow-hidden bg-surface-container-high rounded-xl p-8 md:p-12">
+<div class="absolute top-0 right-0 w-1/3 h-full dhaka-pattern opacity-10"></div>
+<div class="relative z-10 flex flex-col items-start gap-4">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Tonight's Celebration</span>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-primary leading-tight tracking-tighter">
+                    Fuel the <br/> <span class="italic">Modern Mela</span>
+</h1>
+<p class="text-on-surface-variant max-w-md text-lg">From Himalayan malts to artisan craft wines. Hand-picked for your festive spirits.</p>
+</div>
+<div class="absolute bottom-[-20%] right-[-5%] w-64 h-64 bg-primary-container/20 blur-3xl rounded-full"></div>
+</header>
+<!-- Mood Filters -->
+<section class="mb-12">
+<h2 class="font-headline text-2xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="mood">mood</span>
+                What's the Mood?
+            </h2>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-6 px-6">
+<button class="flex-shrink-0 flex items-center gap-3 bg-surface-container text-primary font-bold px-6 py-4 rounded-xl shadow-sm hover:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="celebration" style="font-variation-settings: 'FILL' 1;">celebration</span>
+<span>High Energy Jatra</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-3 bg-surface-container-low text-on-surface-variant px-6 py-4 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="local_bar">local_bar</span>
+<span>Chilled Evening</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-3 bg-surface-container-low text-on-surface-variant px-6 py-4 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span>Big Family Feast</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-3 bg-surface-container-low text-on-surface-variant px-6 py-4 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span>Late Night Soul</span>
+</button>
+</div>
+</section>
+<!-- Product Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Featured Large Item -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_12px_32px_rgba(65,41,35,0.06)] group">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 overflow-hidden">
+<img alt="Featured Spirit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Premium amber colored single malt whisky bottle on a rustic wooden table with warm atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFw9bzLc-EwMaLTH7xQVr6wTIiRLndvMAkW9KicBwB7CWhZsMP7p6ALVYO1wqV0Fg1TVKULdqYNjuyzyUQQfCiiE72DIJJvSlJRfpl1Y_Jgf9PfvVVYzgDCAFP__KW6a44KBkwXWkqQANuyCPjfRuIbZjeu_EvME6yyo18L2SmCuDL3jm8UCDJcx_QATiY7VZvagPCSeDgYMXiNofu0-H9G7iGxGrto4cxom_4aCEJk8xa7OFPNcOBm6lt5V76hQJHXmwVj0GIq-GI"/>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-tertiary-container text-on-tertiary-container text-xs font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Festive Special</span>
+<span class="text-secondary font-black text-2xl">Rs. 8,450</span>
+</div>
+<h3 class="font-headline text-3xl font-black text-on-surface mb-2">Yeti's Reserve 12yr</h3>
+<p class="text-on-surface-variant body-md leading-relaxed">A bold Himalayan single malt with notes of dried fruit, oak, and a hint of high-altitude smoke.</p>
+</div>
+<button class="mt-8 mela-gradient text-on-primary font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+<!-- Small Item 1 -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-6 flex flex-col justify-between group">
+<div class="relative mb-6 rounded-lg overflow-hidden h-48">
+<img alt="Craft Beer" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Artisanal craft beer glasses with golden liquid and thick foam in a cozy festive pub setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhrXJFkMGt8UvufReZ3_VJPRgLaPRW1g77yz6Fq_OSHvrBAGeDzqIQvHkVsuYxkQpWPA4A1r9QxEVi1Yrvwg5hYDTOIKpN61X36cpX-ta-cUCSv9Ag1QG6bYuu7HacIyyCrPV8YxUSvpFNCULo-A2fJw6pvrfMXEbCUce2ejjgYFwHI175Z2zN2225fQTqxKoINiYMCxoOuvAqCq1uMILInQS6fr8xI0dapFmrMYlF1EpDmSgC5QpPiYoYG9-oJU4PiqHQImQU1ujI"/>
+<span class="absolute top-2 right-2 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded-full uppercase">Trending</span>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold mb-1">Mela Craft Lager</h4>
+<p class="text-sm text-on-surface-variant mb-4">Crisp, cold, and perfect for spicy snacks.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-lg">Rs. 450</span>
+<button class="bg-surface-container-highest p-3 rounded-full text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Small Item 2 -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-6 flex flex-col justify-between group">
+<div class="relative mb-6 rounded-lg overflow-hidden h-48">
+<img alt="Red Wine" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Elegant red wine pouring into a crystal glass with a dark moody background and soft highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8OIvsVLfIQTYjGO9JtqUSJh7ClPenwPkQ1pVW7YcjGlqoSRpaxl7SDGoPklHNj3kp4Ev8t_u8RwlDkl2jIudM6l-Rk1lfRhTZEO9S6TPC_bjBSSMwJLQ0Pa8twTBAK5MJDc83d8I0ZLaarFYDF1AunnvBdGi5iOsBbj5v5YWFkhJlyYjd7jN2tuoHFqNO89VOAm9Q0XHvXvNpvjHFoeYt7OWv2icGo_xQ4U9NxOTsDnofN5UyexBO-zi0SzVMeCPGpqvqga9Bs7-_"/>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold mb-1">Hills Heritage Red</h4>
+<p class="text-sm text-on-surface-variant mb-4">A smooth blend from the eastern slopes.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-lg">Rs. 2,100</span>
+<button class="bg-surface-container-highest p-3 rounded-full text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Promotion Bento Box -->
+<div class="md:col-span-8 bg-tertiary text-on-tertiary rounded-xl p-8 relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-tertiary-fixed opacity-10 rounded-full blur-3xl"></div>
+<div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="font-headline text-4xl font-black mb-4 tracking-tighter">Festive Bundle Deal</h3>
+<p class="text-tertiary-fixed mb-6">Order 3 bottles of spirits and get a platter of Kathmandu Spiced Wings for free!</p>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-3 rounded-full font-bold hover:bg-white transition-colors">Claim Offer</button>
+</div>
+<div class="flex justify-center">
+<span class="material-symbols-outlined text-[120px] opacity-20" data-icon="celebration">celebration</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Gin & Mixers -->
+<section class="mt-20">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline text-3xl font-black text-on-surface">The Gin Garden</h2>
+<p class="text-on-surface-variant">Botanicals for a refreshing night.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+                    View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Item -->
+<div class="bg-surface-container p-4 rounded-xl group cursor-pointer hover:shadow-lg transition-shadow">
+<img alt="Gin" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="Clear gin bottle with botanical illustrations on a clean white background with citrus garnish nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7TtyM1Vf_yhkBEzXA-qGMySkSpZ1iqDc8z6eSZzyAz8IyKdzAciU1Oy8UMDl02W3HxERea3FpjMoNFNNYBf76V92pD0QLRIconUcAVXaLsBieLm-w4QOQMk8LqyPitnlwTsjCbbhh6IpZ1oBf26dJmB7GPbPdHe1oCrb1vbyICF4GmG5jzkL75hPritZX1EpzNjHVChSX79DrLCellMJk_8s2-c3L2RJJKUrCHrqTjSJle8pjtLIGxw16CN9Y5YcWHOfHC3Sru0lH"/>
+<h5 class="font-bold text-on-surface truncate">Highland Botanist</h5>
+<p class="text-xs text-secondary font-bold">Rs. 3,200</p>
+</div>
+<!-- Item -->
+<div class="bg-surface-container p-4 rounded-xl group cursor-pointer hover:shadow-lg transition-shadow">
+<img alt="Mixer" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="Assorted colorful soda and mixer bottles in a modern geometric arrangement with bright lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAGttSQJAYB2SydwRenwRRJjPtEhXMnvhwx9BDzKp14gR2kmxZLejbpkTSGKSGLeV5CVkJt3My_CKdy7oiKssbdQADpYNHdQpkhvX5JcxXhdIMrxm-77iZZYdKHUK3KuEdE5g_o-kCiBYfFkV5hM6SQdP1iQGUnAQvCKd7el9E_ocU3ZuuEPK-BnUxVdwIxasynV-TpTjIAQ9hVLQaa0RciPiYxjuAqVBi4gMRzMVGeCTt88aPc_SOIDRIJUS5VegsHpCuykZB-j2F"/>
+<h5 class="font-bold text-on-surface truncate">Sparkling Tonic (4pk)</h5>
+<p class="text-xs text-secondary font-bold">Rs. 850</p>
+</div>
+<!-- Item -->
+<div class="bg-surface-container p-4 rounded-xl group cursor-pointer hover:shadow-lg transition-shadow">
+<img alt="Pink Gin" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="Elegant glass of gin and tonic with a rosemary sprig and cucumber slice on a marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnEGmnMWyfDwdoku2GkxnsA-Eb-5vvZhM8tBwUPRk8cMXZA8Jghpiw3NSuHkj5vdqj-4-lF35yK6Tnjmk9GySBHj8A5S9ovA5YTAhkSBe9dddl3WPp4-ZdsRvloUo1e_kmugeGICUS1q1fvB-YW542lASh0n6NbOxDfXTem5-xWNCN5QUE1lE-lj3DwgAflXItskqgmD93hSiK4zywrmMBLrVaj1Gv5fNHuYJ-fa1b0_NntDK8PuWXX1GYiPq5HXMf_qBLNq8G5n--"/>
+<h5 class="font-bold text-on-surface truncate">Ruby Blush Gin</h5>
+<p class="text-xs text-secondary font-bold">Rs. 3,500</p>
+</div>
+<!-- Item -->
+<div class="bg-surface-container p-4 rounded-xl group cursor-pointer hover:shadow-lg transition-shadow">
+<img alt="Vodka" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="Close-up of ice cubes being dropped into a glass of amber liquid with dramatic splashes and lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFN_9JHuogKAJQQYsoGoeLisFw7jsBzEZRHBguesm3pudy4znc6eaP6sHWETEWFep7Pl1ZLwb1NIqix8WdXK-XkPuSzmTSOHrztjo5ajGSIAx8vmr9YPaF_3Avsujh4CckTi1dB3BQun3LJr4mINb3CsBwVBhEIr_V-5YLBJvwVL26eytzKLImLpuXI98PEjBEYJWITNFmGm5XogPAklGANh_wTHD64CnsQpGu0pgUeOFUgRb1mWzO0C0HYwGBC7-jQ1batH3HSERq"/>
+<h5 class="font-bold text-on-surface truncate">Everest Clear Vodka</h5>
+<p class="text-xs text-secondary font-bold">Rs. 2,800</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#ffede9] dark:bg-stone-900 w-full pt-12 pb-32 px-6 no-border">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div>
+<span class="font-['Epilogue'] font-black text-2xl text-[#b5161e] mb-4 block">Madhira</span>
+<p class="text-[#412923] dark:text-stone-500 font-body mb-6">Enjoy responsibly. The Modern Mela brings the festival spirit to your doorstep, any time of the night.</p>
+<div class="flex gap-4">
+<a class="text-[#412923] dark:text-stone-500 hover:text-[#b5161e] transition-colors" href="#"><span class="material-symbols-outlined" data-icon="facebook">social_leaderboard</span></a>
+<a class="text-[#412923] dark:text-stone-500 hover:text-[#b5161e] transition-colors" href="#"><span class="material-symbols-outlined" data-icon="instagram">retweet</span></a>
+<a class="text-[#412923] dark:text-stone-500 hover:text-[#b5161e] transition-colors" href="#"><span class="material-symbols-outlined" data-icon="X">crossword</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<ul class="space-y-2">
+<li><a class="text-[#412923] dark:text-stone-500 hover:text-[#b5161e] text-sm" href="#">Terms</a></li>
+<li><a class="text-[#412923] dark:text-stone-500 hover:text-[#b5161e] text-sm" href="#">Privacy</a></li>
+</ul>
+<ul class="space-y-2">
+<li><a class="text-[#412923] dark:text-stone-500 hover:text-[#b5161e] text-sm" href="#">Merchant Login</a></li>
+<li><a class="text-[#412923] dark:text-stone-500 hover:text-[#b5161e] text-sm" href="#">Career</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/20 text-center">
+<p class="text-xs text-[#412923] dark:text-stone-500">© 2024 Madhira. The Modern Mela Experience.</p>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#fff4f2]/80 dark:bg-stone-950/80 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-8px_30px_rgba(65,41,35,0.1)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home_app_logo">home_app_logo</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffe2db] dark:bg-stone-800 text-[#b5161e] dark:text-[#ff766d] rounded-full px-6 py-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="wine_bar" style="font-variation-settings: 'FILL' 1;">wine_bar</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest mt-1">Liquor</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest mt-1">Kitchen</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="cookie">cookie</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest mt-1">Snacks</span>
+</a>
+</nav>
+<!-- FAB -->
+<button class="fixed bottom-32 right-6 md:bottom-12 md:right-12 mela-gradient text-on-primary w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform z-40 group">
+<div class="absolute inset-0 bg-primary rounded-full animate-ping opacity-20 group-hover:hidden"></div>
+<span class="material-symbols-outlined text-3xl" data-icon="delivery_dining">delivery_dining</span>
+</button>
+</body></html>

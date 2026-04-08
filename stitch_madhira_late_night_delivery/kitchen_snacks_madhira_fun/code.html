@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#7b5400",
+                    "on-surface": "#412923",
+                    "primary-container": "#ff766d",
+                    "surface-container-high": "#ffdad2",
+                    "on-primary-fixed-variant": "#600007",
+                    "surface-container": "#ffe2db",
+                    "on-primary-fixed": "#000000",
+                    "on-secondary": "#fff1df",
+                    "surface-container-highest": "#ffd3c9",
+                    "primary-dim": "#a40113",
+                    "primary-fixed-dim": "#ff5a53",
+                    "error-container": "#fb5151",
+                    "inverse-primary": "#ff544e",
+                    "on-secondary-fixed-variant": "#6c4a00",
+                    "primary-fixed": "#ff766d",
+                    "surface-variant": "#ffd3c9",
+                    "tertiary": "#00675c",
+                    "tertiary-fixed": "#8df5e4",
+                    "outline": "#906f68",
+                    "on-tertiary-container": "#005c53",
+                    "outline-variant": "#caa59c",
+                    "on-secondary-container": "#614100",
+                    "tertiary-dim": "#005a50",
+                    "on-error-container": "#570008",
+                    "on-tertiary-fixed-variant": "#00675c",
+                    "on-primary-container": "#4f0004",
+                    "on-tertiary": "#c0fff3",
+                    "error-dim": "#9f0519",
+                    "tertiary-container": "#8df5e4",
+                    "secondary-fixed": "#ffc96f",
+                    "on-surface-variant": "#72544e",
+                    "surface": "#fff4f2",
+                    "on-error": "#ffefee",
+                    "surface-tint": "#b5161e",
+                    "inverse-surface": "#1c0905",
+                    "surface-dim": "#fec8bc",
+                    "surface-container-low": "#ffede9",
+                    "inverse-on-surface": "#b9958d",
+                    "error": "#b31b25",
+                    "secondary-dim": "#6b4900",
+                    "on-tertiary-fixed": "#004840",
+                    "on-background": "#412923",
+                    "on-primary": "#ffefed",
+                    "secondary-container": "#ffc96f",
+                    "primary": "#b5161e",
+                    "tertiary-fixed-dim": "#7fe6d5",
+                    "secondary-fixed-dim": "#ffb623",
+                    "background": "#fff4f2",
+                    "on-secondary-fixed": "#483000",
+                    "surface-bright": "#fff4f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fff4f2; color: #412923; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .dhaka-pattern {
+            background-image: radial-gradient(#caa59c 0.5px, transparent 0.5px);
+            background-size: 16px 16px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff4f2] dark:bg-stone-950 shadow-[0_12px_32px_rgba(65,41,35,0.08)] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="text-3xl font-black text-[#b5161e] dark:text-[#ff766d] italic font-['Epilogue'] tracking-tight">Madhira</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-['Epilogue'] font-bold tracking-tight">
+<a class="text-[#412923] dark:text-stone-400 hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="text-[#412923] dark:text-stone-400 hover:opacity-80 transition-opacity" href="#">Liquor</a>
+<a class="text-[#b5161e] font-bold" href="#">Kitchen</a>
+<a class="text-[#412923] dark:text-stone-400 hover:opacity-80 transition-opacity" href="#">Snacks</a>
+</div>
+<div class="flex items-center gap-4 text-[#b5161e] dark:text-[#ff766d]">
+<button class="material-symbols-outlined hover:opacity-80 transition-opacity scale-95 duration-200">shopping_cart</button>
+<button class="material-symbols-outlined hover:opacity-80 transition-opacity scale-95 duration-200">notifications</button>
+<button class="md:hidden material-symbols-outlined">menu</button>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section: Editorial Style -->
+<header class="relative mb-16 overflow-hidden rounded-xl bg-surface-container-high h-[400px] flex items-center">
+<div class="absolute inset-0 dhaka-pattern"></div>
+<div class="relative z-10 p-8 md:p-16 max-w-2xl">
+<span class="inline-block px-4 py-1 mb-4 rounded-full bg-secondary text-on-secondary font-label text-sm uppercase tracking-widest font-bold">Mela Specials</span>
+<h1 class="text-5xl md:text-7xl font-headline font-black text-on-primary-container leading-tight mb-6">The Soul of the Kitchen</h1>
+<p class="text-lg md:text-xl text-on-surface-variant font-body mb-8 opacity-90">Warmth, spices, and the rhythmic crunch of late-night cravings delivered to your doorstep.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold shadow-lg hover:brightness-110 transition-all flex items-center gap-2">
+                        Explore Staples <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="absolute right-0 top-0 h-full w-1/3 hidden lg:block">
+<img alt="Vibrant kitchen setup with traditional Nepali spices and modern utensils" class="h-full w-full object-cover rounded-l-xl" data-alt="Close-up of vibrant Nepali spices in brass bowls on a rustic wooden table with soft warm festival lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbTwaSa0ZJG8j15za8MBcMe3nv9jcMTN7n8NOqsrnWfd_CPj7YflYxp6yB07jLKMT_X55wlMeLNGkkjQp-MardXiZJogbWGagau3fJz_M_9SV3rKHfcZjKX-hTcbj17kX53d31R4MJ5VYjzrK5ADxEEATqbc7MTtkWwzGJjSpehiBQKSkt0My5C7hGGGkGr2NDH24Vt5P0V8PbsY00MUcyX0aLIjpHYVn1Gt2-wCIzjtfa04Kt0jo7YbUv-B7vSkm1scCyyhBkhjFs"/>
+</div>
+</header>
+<!-- Categories: Bento Grid Style -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+<!-- Large Feature Card -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="text-3xl font-headline font-extrabold text-primary mb-2">Artisan Snacks</h3>
+<p class="text-on-surface-variant mb-6 max-w-xs">Handcrafted chiura, spiced nuts, and traditional bites for the perfect evening.</p>
+<button class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Shop Snacks <span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<img alt="Artisan snack arrangement" class="absolute -right-8 -bottom-8 w-64 h-64 object-cover rounded-full rotate-12 transition-transform group-hover:scale-110 group-hover:rotate-0" data-alt="Authentic Nepali chiura snacks in handmade leaf bowls with golden marigold petals scattered on a terracotta surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6k6LmuL8wHV-HYC3Jx-X6kkww8TnBWBZhn9CuUdXMoHM27VbyFLMXJAOV9QeCP9o28c2kUWajnN9rPAOZcpT1rJp-alFsXG6fY6AAAe9FnVkzdx2UKbh7nbq0YyV5hL_lUrbX4TmBZv45wCoyYpFiMJbSlkOc41gX8FDyxkGIZvj_Lh7Ohx567-XqEae1SFpxFnppHALkJx3fwFgcjveVZNbCs5XgzjA0rCHs_XLhhUHgBZj_WgFn_yaajbAeW_ygdBVbKNAjmvRk"/>
+</div>
+<!-- Small Bento Items -->
+<div class="bg-tertiary-container rounded-xl p-6 flex flex-col justify-center items-center text-center group">
+<div class="w-16 h-16 bg-white/40 rounded-full flex items-center justify-center mb-4 transition-transform group-hover:rotate-12">
+<span class="material-symbols-outlined text-tertiary text-3xl">restaurant</span>
+</div>
+<h4 class="font-headline font-bold text-on-tertiary-container">Main Meals</h4>
+<p class="text-sm text-on-tertiary-container opacity-80">Hearty &amp; Filling</p>
+</div>
+<div class="bg-secondary-container rounded-xl p-6 flex flex-col justify-center items-center text-center group">
+<div class="w-16 h-16 bg-white/40 rounded-full flex items-center justify-center mb-4 transition-transform group-hover:-rotate-12">
+<span class="material-symbols-outlined text-secondary text-3xl">cookie</span>
+</div>
+<h4 class="font-headline font-bold text-on-secondary-container">Sweet Treats</h4>
+<p class="text-sm text-on-secondary-container opacity-80">Sweet Deserts</p>
+</div>
+<div class="md:col-span-2 bg-surface-container-highest rounded-xl p-8 flex items-center justify-between overflow-hidden">
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-primary-container">Kitchen Essentials</h3>
+<p class="text-on-surface-variant">The pantry must-haves.</p>
+</div>
+<div class="flex gap-4">
+<img alt="Mustard Oil bottle" class="w-20 h-24 object-cover rounded-md shadow-md rotate-3" data-alt="Premium glass bottle of organic mustard oil with a golden glow and traditional label" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRIEm-PdAmHOeD-KLZvwSp6st-gmARh5hvm81mXKQ_hR0G4c0kUZoyAspyFenyvE1FyxCDmCxDHWFYi-aQngHubMNxGA-w-J38-Tz0vZgsGvgdqJGiCdKVSOEC7WuEf8-L46bKB4iypL4jAmtvXAE3ik-gzRSyv4rr4zWKXdiqsf4sHJdNW_mfpIgVQYEcU-Jgrw12iBv6XvBnL6_idFDzsTYkhxpaedIvxq_Lq3JFpSyuf3dXMEysamzlq1ha8X3_PfN-xXT0m9SV"/>
+<img alt="Spices" class="w-20 h-24 object-cover rounded-md shadow-md -rotate-3" data-alt="Heap of vibrant red chili powder and turmeric in small clay pots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6tT5r_FPJnhOdY-Fej42gscRp-DJjsMn6nF2ScWAGQvK575eQZoYAyaYci-lpXff3LD-pLQBZ2CSEeWANbKymQKScMSxxVw6ByO0D4IT7Kb0cw0fUfwmbDHSmaPg-a6yu-kLLYxZTZ6p9-1gxkpMRTtPFKsacKKeIClQhyPDiHSNS2iwgsLB3NWsMbhIVRVSpOfyjQFNDZ1sZoThJPy_8S4AVfhisJAFREuIIuYnYJvDyfv5Mz4NFLnaDKuiErPeOtSP6VnJKECbn"/>
+</div>
+</div>
+</section>
+<!-- Product Grid: No Borders, Soft Layering -->
+<section class="mb-20">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-4xl font-headline font-black text-on-surface">Trending Now</h2>
+<p class="text-on-surface-variant">What's hot in the Mela tonight.</p>
+</div>
+<div class="flex gap-2">
+<button class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group">
+<div class="aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4 relative">
+<img alt="Hot Spicy Noodles" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Steaming bowl of spicy Himalayan ramen with fresh herbs and a boiled egg, moody late-night lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2bxrSEOFYDv8z6alAcmKwt7BAC4lQfyj1pmDz6tOWPKhSXq8ayeD1PYU-A4DAVVAK_uzoE0NiME9mPSdO6zL1kFIZGJupsvdi6j-8N5KkR2MHywzyRV26wMztJeTV1Ydpzbo_d3IxGOCHMJqzsf4Z97ED91vc2xGi1TEiPGeU2b9bysirzQMHE-bzVDn8nx80WbZhPgXc2p9aC0eljKoVRw3o7i-Uusp9i_L3KCAs2rwa3RDhhHYg3AF12AxtZXtiRc6bW45mhkm8"/>
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+<span class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold font-label">SPICY</span>
+</div>
+<h4 class="font-headline font-bold text-lg">Fire-cracker Noodles</h4>
+<p class="text-sm text-on-surface-variant mb-2">5-pack Hot Spicy</p>
+<p class="font-bold text-primary">Rs. 450</p>
+</div>
+<!-- Product Card 2 -->
+<div class="group">
+<div class="aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4 relative">
+<img alt="Spiced Cashews" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Heap of roasted cashews coated in dark red spices on a slate background with dramatic side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_PNosIxL3I8tkY-LeTNH00Qpx09fLcKVcgkKNfH7j4O7sZheT82CqKi4i0jDMEbpPDMkLFI71sRV5JCDNvlf_z6NME5pEpt31GHeAH-92VWJHWXNql96UsaBzdwSkH6GmqW3tqHCRm1mIafQZ_T0kcgTTlzkuW6ltsHlG1F4W5R4giDMEMm1TSLndQkBYz0MjtQniUqKG7fx9-PygqbQJ75_0SurwkG8M8DKdqqAr8o19e_h4XmDx5so5UUZmaQqwG4ebFp-VgccS"/>
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-headline font-bold text-lg">Himalayan Spiced Cashew</h4>
+<p class="text-sm text-on-surface-variant mb-2">200g Premium Roast</p>
+<p class="font-bold text-primary">Rs. 890</p>
+</div>
+<!-- Product Card 3 -->
+<div class="group">
+<div class="aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4 relative">
+<img alt="Crunchy Aloo Chips" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Stack of thin-sliced golden potato chips dusted with chili and herbs in a modern black ceramic bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuBkSS5oD7x5BQQHcFXvUZ9MX9AfBs_wFTp6z4SbByHmpzibYNdEUjy3IVamKT2aLEbPqARD8s_T2Sg-WreomLxF6yCYL7ar9FfQhlzhekLn0KfJyeTarU8IRyOHJgaUarYvfT1dDgu6ZT3p-bElU0UuBmcuOND_ohKO6xlK55koM7l2PqWD_a6Pqv4RwfAMKYa-RUozSFoeKHvGlC4pYS_cizzGRA--Q9EhhGCWA-u8ZsoCicoA_b3_L4SBvY-viMX4fHo9LkLTIU"/>
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+<span class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-xs font-bold font-label">VEGAN</span>
+</div>
+<h4 class="font-headline font-bold text-lg">Mela Magic Chips</h4>
+<p class="text-sm text-on-surface-variant mb-2">Peri-peri Flavor</p>
+<p class="font-bold text-primary">Rs. 120</p>
+</div>
+<!-- Product Card 4 -->
+<div class="group">
+<div class="aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4 relative">
+<img alt="Traditional Pickles" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A jar of dark red sun-dried tomato pickle with whole spices visible through the glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnennvyKFJ_Z1EcvdMgjbRhddgqLte5MQecsF8JaaxcuZvF5VRBUeFIFYwkBTta0V5gTwyUjj3aj2LmItPybAV2QV5PFGEfePvVY4ucdkROgDst48oiUdN3HclOTejkyYYB40qFKoY-eappjr7TNhZ1uMKzRnZTd7z7k1Vp3fekEmnyc2VRv-jcsYwKkcS9O1nPaFkDSn5YdaepJK9MXo_uE5hemBi7o5RvnvS0f1TqFfQFPvyg9Iov9b6v_MF1Dh9I1RJd3RLnyPW"/>
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-headline font-bold text-lg">Sun-dried Tomato Achar</h4>
+<p class="text-sm text-on-surface-variant mb-2">Handmade &amp; Aged</p>
+<p class="font-bold text-primary">Rs. 350</p>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA Card -->
+<section class="bg-surface-container rounded-xl p-12 text-center relative overflow-hidden">
+<div class="absolute inset-0 dhaka-pattern"></div>
+<div class="relative z-10">
+<h2 class="text-3xl font-headline font-black mb-4">Craving something specific?</h2>
+<p class="max-w-lg mx-auto mb-8 text-on-surface-variant">Subscribe to get notified about our limited-edition festive snack hampers and new kitchen arrivals.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+<input class="flex-1 bg-surface-container-lowest border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary outline-none" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold">Join the Mela</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-12 pb-32 px-6 bg-[#ffede9] dark:bg-stone-900 no-border">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div class="flex flex-col gap-6">
+<span class="font-['Epilogue'] font-black text-2xl text-[#b5161e]">Madhira</span>
+<p class="text-[#412923] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-sm max-w-xs">Connecting you to the heart of Nepal's festive flavors. Late-night deliveries, curated tastes.</p>
+<div class="flex gap-4">
+<a class="text-[#b5161e] hover:text-[#00675c] transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-[#b5161e] hover:text-[#00675c] transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-4">
+<h5 class="font-bold font-['Epilogue']">Explore</h5>
+<a class="text-[#412923] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#00675c] transition-colors" href="#">Terms</a>
+<a class="text-[#412923] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#00675c] transition-colors" href="#">Privacy</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-bold font-['Epilogue']">Business</h5>
+<a class="text-[#412923] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#00675c] transition-colors" href="#">Merchant Login</a>
+<a class="text-[#412923] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#00675c] transition-colors" href="#">Career</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10">
+<p class="text-center text-[#412923] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-sm">© 2024 Madhira. The Modern Mela Experience.</p>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#fff4f2]/80 dark:bg-stone-950/80 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-8px_30px_rgba(65,41,35,0.1)]">
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">home_app_logo</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">wine_bar</span>
+<span>Liquor</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffe2db] dark:bg-stone-800 text-[#b5161e] dark:text-[#ff766d] rounded-full px-6 py-2 font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span>Kitchen</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#412923] dark:text-stone-400 opacity-60 font-['Plus_Jakarta_Sans'] text-[11px] font-bold uppercase tracking-widest hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">cookie</span>
+<span>Snacks</span>
+</a>
+</nav>
+<!-- Contextual FAB (Suppressing on Kitchen details, but showing as global "Cart" button) -->
+<button class="fixed bottom-28 right-6 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center z-40 transition-transform active:scale-95 animate-pulse-subtle">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+</button>
+</body></html>

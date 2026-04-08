@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Madhira Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-container": "#614100",
+                "on-tertiary": "#c0fff3",
+                "on-tertiary-fixed": "#004840",
+                "primary-dim": "#a40113",
+                "outline": "#906f68",
+                "tertiary-container": "#8df5e4",
+                "primary-container": "#ff766d",
+                "surface-container-highest": "#ffd3c9",
+                "on-primary-fixed": "#000000",
+                "secondary": "#7b5400",
+                "error-dim": "#9f0519",
+                "error-container": "#fb5151",
+                "tertiary-fixed": "#8df5e4",
+                "primary-fixed-dim": "#ff5a53",
+                "on-primary-fixed-variant": "#600007",
+                "tertiary": "#00675c",
+                "inverse-on-surface": "#b9958d",
+                "surface-container": "#ffe2db",
+                "on-primary-container": "#4f0004",
+                "secondary-fixed-dim": "#ffb623",
+                "on-background": "#412923",
+                "surface-container-high": "#ffdad2",
+                "inverse-surface": "#1c0905",
+                "surface-bright": "#fff4f2",
+                "tertiary-dim": "#005a50",
+                "on-error-container": "#570008",
+                "tertiary-fixed-dim": "#7fe6d5",
+                "surface": "#fff4f2",
+                "secondary-container": "#ffc96f",
+                "surface-variant": "#ffd3c9",
+                "on-secondary-fixed": "#483000",
+                "on-error": "#ffefee",
+                "on-tertiary-container": "#005c53",
+                "inverse-primary": "#ff544e",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed": "#ff766d",
+                "surface-dim": "#fec8bc",
+                "primary": "#b5161e",
+                "on-primary": "#ffefed",
+                "outline-variant": "#caa59c",
+                "secondary-fixed": "#ffc96f",
+                "on-surface-variant": "#72544e",
+                "background": "#fff4f2",
+                "error": "#b31b25",
+                "surface-container-low": "#ffede9",
+                "surface-tint": "#b5161e",
+                "on-tertiary-fixed-variant": "#00675c",
+                "secondary-dim": "#6b4900",
+                "on-secondary-fixed-variant": "#6c4a00",
+                "on-surface": "#412923",
+                "on-secondary": "#fff1df"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Epilogue"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .dhaka-pattern {
+            background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0);
+            background-size: 16px 16px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-orange-50 dark:bg-stone-950 shadow-[4px_0_24px_rgba(65,41,35,0.04)] flex flex-col h-full py-6 z-50">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="festival" style="font-variation-settings: 'FILL' 1;">festival</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-red-900 dark:text-red-400 font-epilogue leading-tight">Madhira</h1>
+<p class="text-xs font-medium text-stone-500">Festive Admin</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto">
+<a class="bg-red-100/50 dark:bg-red-900/20 text-red-900 dark:text-red-400 rounded-xl mx-2 my-1 flex items-center px-4 py-3 font-epilogue font-bold transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-800 dark:hover:text-red-300 px-4 py-3 mx-2 flex items-center transition-all hover:bg-orange-100 dark:hover:bg-stone-900 rounded-xl hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-800 dark:hover:text-red-300 px-4 py-3 mx-2 flex items-center transition-all hover:bg-orange-100 dark:hover:bg-stone-900 rounded-xl hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-800 dark:hover:text-red-300 px-4 py-3 mx-2 flex items-center transition-all hover:bg-orange-100 dark:hover:bg-stone-900 rounded-xl hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+<span>Users</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-800 dark:hover:text-red-300 px-4 py-3 mx-2 flex items-center transition-all hover:bg-orange-100 dark:hover:bg-stone-900 rounded-xl hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 space-y-4">
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span>Support Portal</span>
+</button>
+<div class="pt-4 space-y-1">
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-800 dark:hover:text-red-300 px-4 py-2 mx-2 flex items-center text-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-800 dark:hover:text-red-300 px-4 py-2 mx-2 flex items-center text-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="w-full sticky top-0 z-40 bg-orange-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-sm ml-64 w-[calc(100%-16rem)]">
+<div class="flex justify-between items-center px-6 py-3">
+<div class="flex items-center gap-4 bg-orange-100/50 dark:bg-stone-900 px-4 py-2 rounded-full w-96 transition-colors">
+<span class="material-symbols-outlined text-stone-500" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-full" placeholder="Search analytics or orders..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative p-2 hover:bg-orange-100/50 dark:hover:bg-stone-800 transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined text-stone-600 dark:text-stone-400" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 hover:bg-orange-100/50 dark:hover:bg-stone-800 transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined text-stone-600 dark:text-stone-400" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="flex items-center gap-3 border-l border-orange-200 dark:border-stone-800 pl-6">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-on-surface leading-tight">Admin User</p>
+<p class="text-xs text-stone-500">Super Administrator</p>
+</div>
+<img class="w-10 h-10 rounded-full object-cover ring-2 ring-primary-container" data-alt="close up headshot portrait of a professional woman with a warm expression in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1pc6-YEb0rangkQSuwTH_7DDeCuS0GFmVviDyHgitIIvnfvFYKOyxLYqBdp36qM6wPC67LmO-4cU0H-N404dphJ54LxcorCagxnizXVwLA0ZYy3dT-EgA6XrNtthEq79xi2arFKnMmD2HBeIFLJv1JmOI3T_fMmieM0yie_4PPVEfSaGKAtE8qjDd_YlMaZY0fCgcnXSMUV5X1CT1vmFkCOXxSSDzO3ha95E7nWocvgPNUE-Mrm7EcOtLpqgcqQMUZN4igbnKOKMA"/>
+</div>
+</div>
+</div>
+<div class="bg-orange-100 dark:bg-stone-900 h-[1px] w-full"></div>
+</header>
+<main class="ml-64 p-8 min-h-screen">
+<!-- Hero Section / Welcome -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-primary mb-2">Festive Performance</h2>
+<p class="text-stone-600 font-medium">Your overview for the <span class="text-secondary font-bold">Indra Jatra Week</span> dashboard.</p>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2 text-sm font-bold">
+<span class="material-symbols-outlined text-secondary" data-icon="calendar_today">calendar_today</span>
+                    Today: Sept 18, 2024
+                </div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-primary-dim transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                    Export Report
+                </button>
+</div>
+</div>
+<!-- Metric Cards (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+<div class="md:col-span-1 bg-surface-container-highest p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 text-primary/10 dhaka-pattern w-32 h-32 rotate-12 -mr-8 -mt-8"></div>
+<div class="flex flex-col h-full relative z-10">
+<div class="w-12 h-12 bg-white/40 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="text-sm font-bold text-stone-600 uppercase tracking-wider mb-1">Total Revenue</span>
+<span class="text-3xl font-black text-on-surface font-headline mb-4">Rs. 842.5k</span>
+<div class="mt-auto flex items-center gap-1 text-tertiary font-bold text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                        +14.2% from last week
+                    </div>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container p-6 rounded-xl relative overflow-hidden group">
+<div class="flex flex-col h-full relative z-10">
+<div class="w-12 h-12 bg-white/60 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="shopping_basket" style="font-variation-settings: 'FILL' 1;">shopping_basket</span>
+</div>
+<span class="text-sm font-bold text-stone-600 uppercase tracking-wider mb-1">New Orders</span>
+<span class="text-3xl font-black text-on-surface font-headline mb-4">1,284</span>
+<div class="mt-auto flex items-center gap-1 text-tertiary font-bold text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                        +8.1% vs target
+                    </div>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="flex flex-col h-full relative z-10">
+<div class="w-12 h-12 bg-white/60 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="person_add" style="font-variation-settings: 'FILL' 1;">person_add</span>
+</div>
+<span class="text-sm font-bold text-stone-600 uppercase tracking-wider mb-1">Active Customers</span>
+<span class="text-3xl font-black text-on-surface font-headline mb-4">4.2k</span>
+<div class="mt-auto flex items-center gap-1 text-secondary font-bold text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="trending_flat">trending_flat</span>
+                        Stable growth
+                    </div>
+</div>
+</div>
+<div class="md:col-span-1 bg-tertiary-container p-6 rounded-xl relative overflow-hidden group">
+<div class="flex flex-col h-full relative z-10">
+<div class="w-12 h-12 bg-white/40 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="timer" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<span class="text-sm font-bold text-on-tertiary-container uppercase tracking-wider mb-1">Avg. Delivery</span>
+<span class="text-3xl font-black text-on-tertiary-container font-headline mb-4">22 min</span>
+<div class="mt-auto flex items-center gap-1 text-tertiary font-bold text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="trending_down">trending_down</span>
+                        -3m (Faster peak service)
+                    </div>
+</div>
+</div>
+</div>
+<!-- Sales Chart & Inventory Alerts -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+<!-- Sales Chart (Placeholder Visual) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(65,41,35,0.04)]">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold font-headline">Revenue Trends</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">Week</button>
+<button class="px-3 py-1 hover:bg-orange-50 rounded-full text-xs font-bold transition-colors">Month</button>
+</div>
+</div>
+<div class="relative h-64 w-full bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/10">
+<!-- Visual representation of a chart using divs -->
+<div class="absolute inset-0 flex items-end justify-between px-8 py-4">
+<div class="w-8 bg-primary/20 rounded-t-lg h-[40%]"></div>
+<div class="w-8 bg-primary/30 rounded-t-lg h-[60%]"></div>
+<div class="w-8 bg-primary/40 rounded-t-lg h-[45%]"></div>
+<div class="w-8 bg-primary/60 rounded-t-lg h-[80%]"></div>
+<div class="w-8 bg-primary/80 rounded-t-lg h-[65%]"></div>
+<div class="w-8 bg-primary rounded-t-lg h-[100%]"></div>
+<div class="w-8 bg-primary-dim rounded-t-lg h-[85%]"></div>
+</div>
+<div class="absolute inset-0 dhaka-pattern text-outline-variant/5"></div>
+</div>
+<div class="flex justify-between mt-4 px-8 text-xs font-bold text-stone-400">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- Inventory Alerts -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="text-xl font-bold font-headline mb-6">Inventory Alerts</h3>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 group hover:bg-surface-container-highest transition-colors cursor-pointer">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="close up photo of traditional nepali thali set with various small dishes and bowls of authentic food" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDiU443aofLOE92LpxRcnMEVeq4yHHXYBHjZJCULqfLmFavcc67b8n_WQH0wrWWS8BalXo1oEFCSprv3nqNICM_P3oMK3Reo4XhQSgJtAMJl8oJkqwKGc58F0ZUCQZN_dTvcgo8obQYYNhtrTNsVFkhXpsus_NqQF4ltZcn1Pxu8pzcwOa29S4YOlq3g56tGb4keBY_WvdO3WTgkBy2fYw297liKA31u7RYiYJW5oCl15zI5uyDGYz6gmZX-yLPgcmSKOinsx6ZkEt"/>
+<div class="flex-1">
+<p class="font-bold text-sm">Buffalo Momos</p>
+<p class="text-xs text-error font-medium">Critical: 8 units left</p>
+</div>
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 group hover:bg-surface-container-highest transition-colors cursor-pointer">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="vibrant colored traditional nepali drink in a tall glass with ice and garnish on a festive table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnWsRKUGe03CXqVO3JXeK_mxnly_Cs1lCJz-qbpCOLMCx-WUz_6bWoKq7YmFztW348jWLse-KZYMoVSaqelH_u32Do3Cs--oUzMsMAEi6CXEG8NJPKeL2TDMXPYWWKXsRS6nyFMFo22R6hf8ks0ta02sHPdRHhoM13GZ0VqHK0V0uzgyePyp6uTr6e0Zgw3elf1g5ZhPwma8A2MpovhCQwWgFlp5d4qfTJ5fmM9_GSqrIEWeyOfjojVF6qnM6_d88GM5i9-tqCE2h7"/>
+<div class="flex-1">
+<p class="font-bold text-sm">Madhira Special Aila</p>
+<p class="text-xs text-secondary font-medium">Low: 24 bottles</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="inventory">inventory</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 group hover:bg-surface-container-highest transition-colors cursor-pointer">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="deep fried snacks in a traditional wooden bowl with spices scattered around on a textured surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2P8bFD-gFlEvAvmbEb_ro5UZhau-fkwCNTSvJN-UYXR3LAL0ZhmQgDsuDsSrsOkYTPzsO3QkUEae1YLFShjABZ1Kd-3xfcpqSyup3TE9dSlqEYR5Ae55UJhMI1k_SdqFYqlpxUvitep1Xzqx4xPo9aF_2GWd3F-TiFZg5CuZyhLEuQfVBC8NrK0qW5_nU3rp-eoLuqjS1oenp2AGQgiyKcy1RZ67YBAJH8LYEYoJKoR5FoJ3Oq2fX10gpMQ2R_6WVguplCKSdnjdR"/>
+<div class="flex-1">
+<p class="font-bold text-sm">Newari Samay Baji</p>
+<p class="text-xs text-tertiary font-medium">Restock coming today</p>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-icon="schedule">schedule</span>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border-2 border-dashed border-outline-variant rounded-xl text-sm font-bold text-stone-600 hover:border-primary hover:text-primary transition-all">
+                    Manage Full Inventory
+                </button>
+</div>
+</div>
+<!-- Recent Orders Table (No divider, tonal layering) -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(65,41,35,0.04)]">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold font-headline">Recent Festive Orders</h3>
+<button class="text-primary font-bold text-sm hover:underline">View All History</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-stone-500 text-xs font-black uppercase tracking-widest bg-surface-container-low rounded-lg">
+<th class="px-6 py-4 rounded-l-xl">Order ID</th>
+<th class="px-6 py-4">Customer</th>
+<th class="px-6 py-4">Items</th>
+<th class="px-6 py-4">Amount</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 rounded-r-xl">Action</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="hover:bg-orange-50/50 transition-colors">
+<td class="px-6 py-6 font-bold text-primary">#MDR-9021</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-[10px] font-black">SP</div>
+<span class="font-bold">Siddharth P.</span>
+</div>
+</td>
+<td class="px-6 py-6 text-stone-600">3x Momos, 1x Aila Set</td>
+<td class="px-6 py-6 font-bold">Rs. 2,450</td>
+<td class="px-6 py-6">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">In Prep</span>
+</td>
+<td class="px-6 py-6">
+<button class="p-2 hover:bg-orange-100 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-orange-50/50 transition-colors">
+<td class="px-6 py-6 font-bold text-primary">#MDR-9020</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-[10px] font-black">AK</div>
+<span class="font-bold">Anjali K.</span>
+</div>
+</td>
+<td class="px-6 py-6 text-stone-600">2x Thali Special</td>
+<td class="px-6 py-6 font-bold">Rs. 1,800</td>
+<td class="px-6 py-6">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold">Out for Delivery</span>
+</td>
+<td class="px-6 py-6">
+<button class="p-2 hover:bg-orange-100 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-orange-50/50 transition-colors">
+<td class="px-6 py-6 font-bold text-primary">#MDR-9019</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-[10px] font-black">RM</div>
+<span class="font-bold">Rohan M.</span>
+</div>
+</td>
+<td class="px-6 py-6 text-stone-600">5x Juju Dhau, 2x Sel Roti</td>
+<td class="px-6 py-6 font-bold">Rs. 1,200</td>
+<td class="px-6 py-6">
+<span class="bg-orange-100 text-stone-600 px-3 py-1 rounded-full text-xs font-bold">Delivered</span>
+</td>
+<td class="px-6 py-6">
+<button class="p-2 hover:bg-orange-100 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- FAB for quick action ( Authority Source: JSON mandate ) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-on-primary rounded-xl shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-3xl" data-icon="add" style="font-variation-settings: 'FILL' 0; font-weight: 700;">add</span>
+<span class="absolute right-20 bg-on-surface text-white px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Create New Order</span>
+</button>
+</body></html>
