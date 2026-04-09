@@ -1,9 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import api from '../api';
+import { Link, useNavigate } from 'react-router-dom';
+import api from '../services/api';
 
-const Admin = () => {
+const formatCurrency = (value) => {
+    if (!value) return 'Rs. 0';
+    if (value >= 1000000) return `Rs. ${(value / 1000000).toFixed(1)}M`;
+    if (value >= 1000) return `Rs. ${(value / 1000).toFixed(1)}k`;
+    return `Rs. ${value}`;
+};
+
+const formatDate = (dateString) => {
+    if (!dateString) return '-';
+    return new Date(dateString).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+    });
+};
+
+const getStatusColor = (status) => {
+    const colors = {
+        pending: 'bg-yellow-500/20 text-yellow-700',
+        confirmed: 'bg-blue-500/20 text-blue-700',
+        preparing: 'bg-orange-500/20 text-orange-700',
+        out_for_delivery: 'bg-purple-500/20 text-purple-700',
+        delivered: 'bg-green-500/20 text-green-700',
+        cancelled: 'bg-red-500/20 text-red-700',
+    };
+    return colors[status] || 'bg-gray-500/20 text-gray-700';
+};
+
+const AdminDashboard = () => {
+    const navigate = useNavigate();
     const [dashboard, setDashboard] = useState(null);
+    const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [activeTab, setActiveTab] = useState('dashboard');
 
     useEffect(() => {
         fetchDashboard();
@@ -11,8 +43,12 @@ const Admin = () => {
 
     const fetchDashboard = async () => {
         try {
-            const res = await api.get('/admin/dashboard');
-            setDashboard(res.data);
+            const [dashboardRes, ordersRes] = await Promise.all([
+                api.get('/admin/dashboard'),
+                api.get('/admin/orders')
+            ]);
+            setDashboard(dashboardRes.data);
+            setOrders(ordersRes.data);
         } catch (error) {
             console.error('Error fetching dashboard:', error);
         }
@@ -48,14 +84,29 @@ const Admin = () => {
             {/* Header */}
             <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <h2 className="text-4xl font-black font-headline font-bold text-primary mb-2">Dashboard</h2>
-                    <p className="text-on-surface-variant">Your overview for the store performance.</p>
+                    <h2 className="text-4xl font-black font-headline font-bold text-primary mb-2">Admin Panel</h2>
+                    <p className="text-on-surface-variant">Manage your store operations</p>
                 </div>
-                <div className="flex gap-3">
-                    <div className="bg-surface-container px-4 py-2 rounded-xl flex items-center gap-2 text-sm font-bold">
-                        <span className="material-symbols-outlined text-primary">calendar_today</span>
-                        Today
-                    </div>
+                <div className="flex gap-2 bg-surface-container p-1 rounded-xl">
+                    <button 
+                        onClick={() => setActiveTab('dashboard')}
+                        className={`px-4 py-2 rounded-lg font-bold text-sm transition-colors ${activeTab === 'dashboard' ? 'bg-primary text-on-primary' : 'text-on-surface-variant hover:text-on-surface'}`}
+                    >
+                        Dashboard
+                    </button>
+                    <button 
+                        onClick={() => setActiveTab('orders')}
+                        className={`px-4 py-2 rounded-lg font-bold text-sm transition-colors ${activeTab === 'orders' ? 'bg-primary text-on-primary' : 'text-on-surface-variant hover:text-on-surface'}`}
+                    >
+                        All Orders
+                    </button>
+                    <Link 
+                        to="/"
+                        className="px-4 py-2 rounded-lg font-bold text-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1"
+                    >
+                        <span className="material-symbols-outlined text-sm">storefront</span>
+                        View Site
+                    </Link>
                 </div>
             </div>
 
@@ -68,7 +119,7 @@ const Admin = () => {
                             <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>payments</span>
                         </div>
                         <span className="text-sm font-bold text-outline uppercase tracking-wider mb-1">Total Revenue</span>
-                        <span className="text-3xl font-black text-on-surface font-headline mb-4">Rs. {dashboard.revenue || 0}</span>
+                        <span className="text-3xl font-black text-on-surface font-headline mb-4">{formatCurrency(dashboard.revenue)}</span>
                     </div>
                 </div>
                 <div className="bg-surface-container p-6 rounded-xl">
@@ -101,9 +152,16 @@ const Admin = () => {
             </div>
 
             {/* Recent Orders */}
+            {activeTab === 'dashboard' && (
             <div className="bg-surface-container-lowest p-8 rounded-xl">
                 <div className="flex items-center justify-between mb-8">
                     <h3 className="text-2xl font-bold font-headline">Recent Orders</h3>
+                    <button 
+                        onClick={() => setActiveTab('orders')}
+                        className="text-primary font-bold text-sm hover:underline"
+                    >
+                        View All
+                    </button>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
@@ -133,18 +191,12 @@ const Admin = () => {
                                         <td className="px-6 py-6 text-on-surface-variant">{order.phone}</td>
                                         <td className="px-6 py-6 font-bold">Rs. {order.total}</td>
                                         <td className="px-6 py-6">
-                                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                                                order.status === 'pending' 
-                                                ? 'bg-yellow-500/20 text-yellow-700' 
-                                                : order.status === 'completed'
-                                                ? 'bg-green-500/20 text-green-700'
-                                                : 'bg-blue-500/20 text-blue-700'
-                                            }`}>
+                                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${getStatusColor(order.status)}`}>
                                                 {order.status || 'pending'}
                                             </span>
                                         </td>
                                         <td className="px-6 py-6 text-on-surface-variant">
-                                            {new Date(order.created_at).toLocaleDateString()}
+                                            {formatDate(order.created_at)}
                                         </td>
                                     </tr>
                                 ))
@@ -159,8 +211,80 @@ const Admin = () => {
                     </table>
                 </div>
             </div>
+            )}
+
+            {/* All Orders Tab */}
+            {activeTab === 'orders' && (
+            <div className="bg-surface-container-lowest p-8 rounded-xl">
+                <div className="flex items-center justify-between mb-8">
+                    <h3 className="text-2xl font-bold font-headline">All Orders</h3>
+                    <button 
+                        onClick={() => setActiveTab('dashboard')}
+                        className="text-primary font-bold text-sm hover:underline flex items-center gap-1"
+                    >
+                        <span className="material-symbols-outlined text-sm">arrow_back</span>
+                        Back to Dashboard
+                    </button>
+                </div>
+                <div className="overflow-x-auto">
+                    <table className="w-full text-left border-collapse">
+                        <thead>
+                            <tr className="text-outline text-xs font-bold uppercase tracking-widest bg-surface-container rounded-lg">
+                                <th className="px-6 py-4 rounded-l-xl">Order ID</th>
+                                <th className="px-6 py-4">Customer</th>
+                                <th className="px-6 py-4">Phone</th>
+                                <th className="px-6 py-4">Address</th>
+                                <th className="px-6 py-4">Amount</th>
+                                <th className="px-6 py-4">Payment</th>
+                                <th className="px-6 py-4">Status</th>
+                                <th className="px-6 py-4 rounded-r-xl">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-sm">
+                            {orders && orders.length > 0 ? (
+                                orders.map(order => (
+                                    <tr key={order.id} className="border-t border-outline/10 hover:bg-surface-container/50 transition-colors">
+                                        <td className="px-6 py-6 font-bold text-primary">#MDR-{order.id}</td>
+                                        <td className="px-6 py-6">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-[10px] font-black">
+                                                    {order.customer_name?.charAt(0) || 'U'}
+                                                </div>
+                                                <span className="font-bold">{order.customer_name}</span>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-6 text-on-surface-variant">{order.phone}</td>
+                                        <td className="px-6 py-6 text-on-surface-variant max-w-[200px] truncate">{order.address}</td>
+                                        <td className="px-6 py-6 font-bold">Rs. {order.total}</td>
+                                        <td className="px-6 py-6">
+                                            <span className="px-3 py-1 rounded-full text-xs font-bold bg-surface-container text-on-surface-variant">
+                                                {order.payment_method || 'cash'}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-6">
+                                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${getStatusColor(order.status)}`}>
+                                                {order.status || 'pending'}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-6 text-on-surface-variant">
+                                            {formatDate(order.created_at)}
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan={8} className="px-6 py-12 text-center text-on-surface-variant">
+                                        No orders yet
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            )}
         </div>
     );
 };
 
-export default Admin;
+export default AdminDashboard;
