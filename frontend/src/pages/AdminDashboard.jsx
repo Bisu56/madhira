@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import { useAuth } from '../context/AuthContext';
 
 const formatCurrency = (value) => {
     if (!value) return 'Rs. 0';
@@ -32,10 +33,16 @@ const getStatusColor = (status) => {
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
+    const { logout } = useAuth();
     const [dashboard, setDashboard] = useState(null);
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeTab, setActiveTab] = useState('dashboard');
+
+    const handleLogout = async () => {
+        await logout();
+        navigate('/login');
+    };
 
     useEffect(() => {
         fetchDashboard();
@@ -107,6 +114,13 @@ const AdminDashboard = () => {
                         <span className="material-symbols-outlined text-sm">storefront</span>
                         View Site
                     </Link>
+                    <button 
+                        onClick={handleLogout}
+                        className="px-4 py-2 rounded-lg font-bold text-sm text-error hover:bg-error-container flex items-center gap-1"
+                    >
+                        <span className="material-symbols-outlined text-sm">logout</span>
+                        Logout
+                    </button>
                 </div>
             </div>
 
