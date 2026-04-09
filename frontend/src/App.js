@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
@@ -30,17 +30,30 @@ const ProtectedRoute = ({ children }) => {
     return children;
 };
 
+const StoreLayout = ({ children }) => (
+    <>
+        <Navbar />
+        <main className="flex-1">
+            {children}
+        </main>
+        <Footer />
+    </>
+);
+
+const AuthLayout = ({ children }) => (
+    <main className="flex-1">
+        {children}
+    </main>
+);
+
 function AppRoutes() {
+    const location = useLocation();
+    const isAdminPage = location.pathname.startsWith('/admin') || location.pathname === '/login';
+
     return (
-        <>
-            <Navbar />
-            <main className="flex-1">
+        <div className="min-h-screen flex flex-col bg-surface">
+            {isAdminPage ? (
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="/checkout" element={<Checkout />} />
-                    <Route path="/category/:id" element={<Category />} />
-                    <Route path="/product/:id" element={<ProductDetail />} />
                     <Route path="/login" element={<Login />} />
                     <Route 
                         path="/admin" 
@@ -51,9 +64,19 @@ function AppRoutes() {
                         } 
                     />
                 </Routes>
-            </main>
-            <Footer />
-        </>
+            ) : (
+                <StoreLayout>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/checkout" element={<Checkout />} />
+                        <Route path="/category/:id" element={<Category />} />
+                        <Route path="/product/:id" element={<ProductDetail />} />
+                        <Route path="/login" element={<Navigate to="/" replace />} />
+                    </Routes>
+                </StoreLayout>
+            )}
+        </div>
     );
 }
 
@@ -62,9 +85,7 @@ function App() {
     <AuthProvider>
       <CartProvider>
         <Router>
-          <div className="min-h-screen flex flex-col bg-surface">
             <AppRoutes />
-          </div>
         </Router>
       </CartProvider>
     </AuthProvider>
