@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();
+            $table->foreignId('parent_id')->nullable()->constrained('categories')->onDelete('set null');
+            $table->enum('type', ['bar', 'kitchen', 'mart'])->nullable();
+            $table->string('image')->nullable();
+            $table->integer('sort_order')->default(0);
             $table->timestamps();
         });
     }

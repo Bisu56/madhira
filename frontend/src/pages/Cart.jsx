@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import api from '../api';
+import api from '../services/api';
 
 const Cart = () => {
     const { cart, removeFromCart, clearCart, total } = useCart();
@@ -30,30 +31,30 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return (
-            <div className="min-h-screen pt-32 px-12">
+            <div className="min-h-screen pt-32 px-6">
                 <div className="max-w-2xl mx-auto text-center py-20">
                     <span className="material-symbols-outlined text-8xl text-outline">shopping_cart</span>
-                    <h2 className="text-4xl font-serif mt-8 mb-4">Your Cart is Empty</h2>
-                    <p className="text-outline text-lg mb-8">Add some premium spirits or snacks to get started.</p>
-                    <button className="liquid-gold text-[#412d00] font-semibold px-8 py-4 rounded-xl text-lg hover:scale-105 transition-transform">
-                        Browse Collection
-                    </button>
+                    <h2 className="text-4xl font-black font-headline mt-8 mb-4 text-primary">Your Cart is Empty</h2>
+                    <p className="text-on-surface-variant text-lg mb-8">Start the party by adding some items!</p>
+                    <Link to="/" className="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition-transform inline-block">
+                        Browse Menu
+                    </Link>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen pt-32 px-12 pb-20">
+        <div className="min-h-screen pt-32 pb-20 px-6">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl font-serif mb-12">Your Selection</h2>
+                <h2 className="text-4xl font-black font-headline text-primary mb-12">Your Selection</h2>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Cart Items */}
                     <div className="lg:col-span-2 space-y-6">
                         {cart.map(item => (
                             <div key={item.id} className="flex gap-6 p-6 bg-surface-container-low rounded-xl border border-outline/5">
-                                <div className="w-32 h-40 rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+                                <div className="w-32 h-40 rounded-lg overflow-hidden bg-surface-container-high flex-shrink-0">
                                     <img 
                                         src={item.image || 'https://via.placeholder.com/128x160'} 
                                         alt={item.name}
@@ -62,19 +63,19 @@ const Cart = () => {
                                 </div>
                                 <div className="flex-1 flex flex-col justify-between">
                                     <div>
-                                        <h3 className="font-serif text-xl text-on-surface mb-2">{item.name}</h3>
-                                        <p className="text-outline text-sm">{item.category?.name || 'Premium'}</p>
+                                        <h3 className="font-headline font-bold text-xl text-on-surface mb-2">{item.name}</h3>
+                                        <p className="text-on-surface-variant text-sm">{item.category?.name || 'Premium'}</p>
                                     </div>
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-4">
-                                            <span className="text-outline">Qty: {item.qty}</span>
+                                            <span className="text-on-surface-variant">Qty: {item.qty}</span>
                                         </div>
-                                        <span className="font-serif text-primary text-xl">₹{item.price * item.qty}</span>
+                                        <span className="font-black text-primary text-xl">Rs. {item.price * item.qty}</span>
                                     </div>
                                 </div>
                                 <button
                                     onClick={() => removeFromCart(item.id)}
-                                    className="text-outline hover:text-red-500 transition-colors self-start"
+                                    className="text-outline hover:text-primary transition-colors self-start"
                                 >
                                     <span className="material-symbols-outlined">close</span>
                                 </button>
@@ -85,21 +86,21 @@ const Cart = () => {
                     {/* Order Summary */}
                     <div className="lg:col-span-1">
                         <div className="bg-surface-container rounded-xl p-8 sticky top-32">
-                            <h3 className="font-serif text-2xl mb-6">Order Summary</h3>
+                            <h3 className="font-headline font-bold text-2xl mb-6">Order Summary</h3>
                             
                             <div className="space-y-4 mb-6">
                                 {cart.map(item => (
                                     <div key={item.id} className="flex justify-between text-sm">
-                                        <span className="text-outline">{item.name} x {item.qty}</span>
-                                        <span className="text-on-surface">₹{item.price * item.qty}</span>
+                                        <span className="text-on-surface-variant">{item.name} x {item.qty}</span>
+                                        <span className="font-bold">Rs. {item.price * item.qty}</span>
                                     </div>
                                 ))}
                             </div>
                             
                             <div className="border-t border-outline/10 pt-4 mb-6">
-                                <div className="flex justify-between text-xl font-serif">
+                                <div className="flex justify-between text-xl font-black">
                                     <span>Total</span>
-                                    <span className="text-primary">₹{total}</span>
+                                    <span className="text-primary">Rs. {total}</span>
                                 </div>
                             </div>
 
@@ -131,13 +132,13 @@ const Cart = () => {
                                 <button 
                                     type="submit" 
                                     disabled={loading}
-                                    className="w-full liquid-gold text-[#412d00] font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full bg-primary text-on-primary font-bold py-4 rounded-full text-sm uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {loading ? 'Processing...' : 'Place Order'}
                                 </button>
                             </form>
                             {message && (
-                                <p className={`mt-4 text-center ${message.includes('success') ? 'text-green-500' : 'text-red-500'}`}>
+                                <p className={`mt-4 text-center font-bold ${message.includes('success') ? 'text-tertiary' : 'text-error'}`}>
                                     {message}
                                 </p>
                             )}

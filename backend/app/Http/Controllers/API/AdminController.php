@@ -17,4 +17,9 @@ class AdminController extends Controller
             'recent_orders' => Order::latest()->take(5)->get()
         ];
     }
+
+    public function orders()
+    {
+        return Order::latest()->get();
+    }
 }

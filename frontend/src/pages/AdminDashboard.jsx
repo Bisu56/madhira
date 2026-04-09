@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import api from '../api';
 
 const Admin = () => {
@@ -25,7 +24,7 @@ const Admin = () => {
             <div className="min-h-screen pt-32 flex items-center justify-center">
                 <div className="text-center">
                     <span className="material-symbols-outlined text-6xl text-primary animate-spin">sync</span>
-                    <p className="text-outline mt-4">Loading dashboard...</p>
+                    <p className="text-on-surface-variant mt-4">Loading dashboard...</p>
                 </div>
             </div>
         );
@@ -33,10 +32,10 @@ const Admin = () => {
 
     if (!dashboard) {
         return (
-            <div className="min-h-screen pt-32 px-12">
+            <div className="min-h-screen pt-32 px-6">
                 <div className="text-center py-20">
-                    <h2 className="text-2xl font-serif mb-4">Unable to load dashboard</h2>
-                    <button onClick={fetchDashboard} className="text-primary hover:underline">
+                    <h2 className="text-2xl font-black font-headline mb-4 text-primary">Unable to load dashboard</h2>
+                    <button onClick={fetchDashboard} className="text-primary font-bold hover:underline">
                         Try Again
                     </button>
                 </div>
@@ -45,15 +44,15 @@ const Admin = () => {
     }
 
     return (
-        <div className="min-h-screen pt-32 px-12 pb-20">
+        <div className="min-h-screen pt-32 pb-20 px-6">
             {/* Header */}
             <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <h2 className="text-4xl font-serif font-bold text-primary mb-2">Dashboard</h2>
-                    <p className="text-outline">Your overview for the store performance.</p>
+                    <h2 className="text-4xl font-black font-headline font-bold text-primary mb-2">Dashboard</h2>
+                    <p className="text-on-surface-variant">Your overview for the store performance.</p>
                 </div>
                 <div className="flex gap-3">
-                    <div className="bg-surface-container px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
+                    <div className="bg-surface-container px-4 py-2 rounded-xl flex items-center gap-2 text-sm font-bold">
                         <span className="material-symbols-outlined text-primary">calendar_today</span>
                         Today
                     </div>
@@ -63,13 +62,13 @@ const Admin = () => {
             {/* Metric Cards */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
                 <div className="bg-surface-container-highest p-6 rounded-xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-8 text-primary/10 rotate-12 -mr-8 -mt-8 w-32 h-32" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 0)', backgroundSize: '16px 16px' }}></div>
+                    <div className="absolute top-0 right-0 p-8 text-primary/10 rotate-12 -mr-8 -mt-8 w-32 h-32 dhaka-pattern"></div>
                     <div className="flex flex-col h-full relative z-10">
                         <div className="w-12 h-12 bg-white/40 rounded-lg flex items-center justify-center mb-4">
                             <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>payments</span>
                         </div>
                         <span className="text-sm font-bold text-outline uppercase tracking-wider mb-1">Total Revenue</span>
-                        <span className="text-3xl font-bold text-on-surface font-serif mb-4">₹{dashboard.revenue || 0}</span>
+                        <span className="text-3xl font-black text-on-surface font-headline mb-4">Rs. {dashboard.revenue || 0}</span>
                     </div>
                 </div>
                 <div className="bg-surface-container p-6 rounded-xl">
@@ -78,25 +77,25 @@ const Admin = () => {
                             <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>shopping_basket</span>
                         </div>
                         <span className="text-sm font-bold text-outline uppercase tracking-wider mb-1">Total Orders</span>
-                        <span className="text-3xl font-bold text-on-surface font-serif mb-4">{dashboard.orders || 0}</span>
+                        <span className="text-3xl font-black text-on-surface font-headline mb-4">{dashboard.orders || 0}</span>
                     </div>
                 </div>
                 <div className="bg-surface-container-low p-6 rounded-xl">
                     <div className="flex flex-col h-full">
                         <div className="w-12 h-12 bg-white/60 rounded-lg flex items-center justify-center mb-4">
-                            <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>person_add</span>
+                            <span className="material-symbols-outlined text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>person_add</span>
                         </div>
                         <span className="text-sm font-bold text-outline uppercase tracking-wider mb-1">Customers</span>
-                        <span className="text-3xl font-bold text-on-surface font-serif mb-4">{dashboard.customers || 0}</span>
+                        <span className="text-3xl font-black text-on-surface font-headline mb-4">{dashboard.customers || 0}</span>
                     </div>
                 </div>
-                <div className="bg-secondary-container/30 p-6 rounded-xl">
+                <div className="bg-tertiary-container/30 p-6 rounded-xl">
                     <div className="flex flex-col h-full">
                         <div className="w-12 h-12 bg-white/40 rounded-lg flex items-center justify-center mb-4">
-                            <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>timer</span>
+                            <span className="material-symbols-outlined text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>timer</span>
                         </div>
                         <span className="text-sm font-bold text-outline uppercase tracking-wider mb-1">Recent Orders</span>
-                        <span className="text-3xl font-bold text-on-surface font-serif mb-4">{dashboard.recent_orders?.length || 0}</span>
+                        <span className="text-3xl font-black text-on-surface font-headline mb-4">{dashboard.recent_orders?.length || 0}</span>
                     </div>
                 </div>
             </div>
@@ -104,7 +103,7 @@ const Admin = () => {
             {/* Recent Orders */}
             <div className="bg-surface-container-lowest p-8 rounded-xl">
                 <div className="flex items-center justify-between mb-8">
-                    <h3 className="text-2xl font-bold font-serif">Recent Orders</h3>
+                    <h3 className="text-2xl font-bold font-headline">Recent Orders</h3>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
@@ -125,33 +124,33 @@ const Admin = () => {
                                         <td className="px-6 py-6 font-bold text-primary">#MDR-{order.id}</td>
                                         <td className="px-6 py-6">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-[10px] font-bold">
+                                                <div className="w-8 h-8 bg-surface-container rounded-full flex items-center justify-center text-[10px] font-black">
                                                     {order.customer_name?.charAt(0) || 'U'}
                                                 </div>
                                                 <span className="font-bold">{order.customer_name}</span>
                                             </div>
                                         </td>
-                                        <td className="px-6 py-6 text-outline">{order.phone}</td>
-                                        <td className="px-6 py-6 font-bold">₹{order.total}</td>
+                                        <td className="px-6 py-6 text-on-surface-variant">{order.phone}</td>
+                                        <td className="px-6 py-6 font-bold">Rs. {order.total}</td>
                                         <td className="px-6 py-6">
                                             <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                                                 order.status === 'pending' 
-                                                ? 'bg-yellow-500/20 text-yellow-500' 
+                                                ? 'bg-yellow-500/20 text-yellow-700' 
                                                 : order.status === 'completed'
-                                                ? 'bg-green-500/20 text-green-500'
-                                                : 'bg-blue-500/20 text-blue-500'
+                                                ? 'bg-green-500/20 text-green-700'
+                                                : 'bg-blue-500/20 text-blue-700'
                                             }`}>
                                                 {order.status || 'pending'}
                                             </span>
                                         </td>
-                                        <td className="px-6 py-6 text-outline">
+                                        <td className="px-6 py-6 text-on-surface-variant">
                                             {new Date(order.created_at).toLocaleDateString()}
                                         </td>
                                     </tr>
                                 ))
                             ) : (
                                 <tr>
-                                    <td colSpan={6} className="px-6 py-12 text-center text-outline">
+                                    <td colSpan={6} className="px-6 py-12 text-center text-on-surface-variant">
                                         No orders yet
                                     </td>
                                 </tr>
